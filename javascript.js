@@ -5,7 +5,20 @@
 
 function getComputerChoice(){
     let options= ['rock', 'paper', 'scissors'];
-    return compchoice= options[Math.floor(Math.random()*options.length)];
+    return options[Math.floor(Math.random()*options.length)];
 }
 
-console.log (getComputerChoice())
+function playRound(playerSelection, compSelection){
+    if (playerSelection == 'rock' && compSelection == 'scissors'){
+        return "You win! Rock beats scissors."
+    }
+    else if (playerSelection == 'rock' && compSelection == 'paper'){
+        return "You lose! Paper beats rock."
+    }
+    else if (playerSelection == 'rock' && compSelection == 'rock'){
+        return "It's a tie!"
+    }
+}
+const compSelection = getComputerChoice();
+const playerSelection = 'rock';
+console.log(playRound(playerSelection, compSelection));
