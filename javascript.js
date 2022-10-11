@@ -18,7 +18,25 @@ function playRound(playerSelection, compSelection){
     else if (playerSelection == 'rock' && compSelection == 'rock'){
         return "It's a tie!"
     }
+    else if (playerSelection == 'paper' && compSelection == 'scissors'){
+        return "You lose! Scissors beat paper."
+    }
+    else if (playerSelection == 'paper' && compSelection == 'rock'){
+        return "You win! Paper beats rock."
+    }
+    else if (playerSelection == 'paper' && compSelection == 'paper'){
+        return "It's a tie!"
+    }
+    else if (playerSelection == 'scissors' && compSelection == 'paper'){
+        return "You win! Scissors beat paper."
+    }
+    else if (playerSelection == 'scissors' && compSelection == 'rock'){
+        return "You lose! Rock beats scissors."
+    }
+    else (playerSelection == 'scissors' && compSelection == 'scissors');{
+        return "It's a tie!"
+    }
 }
 const compSelection = getComputerChoice();
-const playerSelection = 'rock';
+const playerSelection = 'scissors';
 console.log(playRound(playerSelection, compSelection));
