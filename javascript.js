@@ -60,10 +60,19 @@ function game(){
             compScore++;
         }
         else if(roundResults.substring(0,5) == "It's "){
-            playerScore++;
-            compScore++;
+            playerScore+0;
+            compScore+0;
         }
-        console.log([playerScore,compScore])
+        console.log([playerScore,compScore]);
+    }
+    if (playerScore>compScore){
+        console.log("You won the match!")
+    }
+    else if (playerScore<compScore){
+        console.log("You lost the match!")
+    }
+    else if(playerScore==compScore){
+        console.log("It's a draw!")
     }
     return[playerScore,compScore];
 }
