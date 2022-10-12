@@ -41,6 +41,31 @@ function playRound(playerSelection, compSelection){
         return "It's a tie!"
     }
 }
-const compSelection = getComputerChoice();
-const playerSelection = getPlayerChoice();
-console.log(playRound(playerSelection, compSelection));
+
+function game(){
+    let playerScore=0;
+    let compScore=0;
+    let compSel = "";
+    let playerSel = "";
+    let roundResults = "";
+    for (let i = 0; i < 5; i++) {
+        compSel = getComputerChoice();
+        playerSel = getPlayerChoice();
+        roundResults = playRound(playerSel, compSel);
+        console.log(roundResults);
+        if (roundResults.substring(0,5) == "You w"){
+            playerScore++;
+        }
+        else if(roundResults.substring(0,5) == "You l"){
+            compScore++;
+        }
+        else if(roundResults.substring(0,5) == "It's "){
+            playerScore++;
+            compScore++;
+        }
+        console.log([playerScore,compScore])
+    }
+    return[playerScore,compScore];
+}
+
+game();
